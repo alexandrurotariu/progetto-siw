@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="it" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="https://www.thymeleaf.org">
+<head>
+<link th:href="@{/css/style.css}" rel="stylesheet" />
+<title>Conferma cancellazione</title>
+</head>
+<body>
+	<h1>Sicuro di voler cancellare?</h1>
+	<table>
+		<tr>
+			<td>Nome:</td>
+			<td th:text="${tag.nome}"></td>
+		</tr>
+		<tr>
+			<td>Colore:</td>
+			<td th:text="${tag.colore}"></td>
+		</tr>
+		<tr>
+			<td>Descrizione:</td>
+			<td th:text="${tag.descrizione}"></td>
+		</tr>
+	</table>
+	<p>
+		<a th:href="@{'/home/progettiCreati/' + ${progetto.id}}">
+			<button type="submit">Indietro</button>
+		</a>
+	</p>
+
+	<form
+		th:action="@{'/home/progettiCreati/' + ${progetto.id} + '/' + ${tag.id} + '/cancellaTag'}"
+		method="post">
+		<button type="submit">Conferma</button>
+	</form>
+</body>
+</html>

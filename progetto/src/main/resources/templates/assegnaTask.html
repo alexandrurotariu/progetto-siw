@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="it" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="https://www.thymeleaf.org">
+<head>
+<link th:href="@{/css/style.css}" rel="stylesheet" />
+<title>Assegna task</title>
+</head>
+<body>
+	<h1>Seleziona lo username dell'utente a cui vuoi assegnare il task
+		o "NESSUNO" per rimuoverlo:</h1>
+	<form
+		th:action="@{'/home/progettiCreati/' + ${progetto.id} + '/' + ${task.id} + '/assegnaTask'}"
+		method="POST">
+		Seleziona Username: <select name="credenziali">
+			<option value="0">NESSUNO</option>
+			<option th:each="credenziali : ${credenzialiVisibili}"
+				th:value="${credenziali.id}" th:text="${credenziali.username}"></option>
+		</select>
+		<p>
+			<button type="submit">Conferma</button>
+		</p>
+	</form>
+	<footer>
+		<p>
+			<a
+				th:href="@{'/home/progettiCreati/' + ${progetto.id} + '/' + ${task.id}}">Indietro</a>
+		</p>
+	</footer>
+</body>
+</html>
