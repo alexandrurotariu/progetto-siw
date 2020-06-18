@@ -1,0 +1,21 @@
+h1 {
+	color: #2742fe;
+	font: 32px Georgia, serif;
+}
+
+h3 {
+	color: #2742fe;
+	font: 23px Georgia, serif;
+}
+
+h4 {
+	color: #2742fe;
+	font: 20px Georgia, serif;
+}
+
+
+footer {
+	border-top-style: groove;
+	margin-top: 3em;
+	border-top-width: 7px;
+}
